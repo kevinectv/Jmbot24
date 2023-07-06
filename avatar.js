@@ -1,14 +1,31 @@
-const { EmbedBuilder, ApplicationCommandType } = require("discord.js");
-
-
-/**
- * @type {import('@structures/BaseContext')}
- */
+const { EmbedBuilder, ContextMenuCommandInteraction, ApplicationCommandType } = require("discord.js");
 
 module.exports = {
   name: "avatar",
-  description: "displays avatar information about the user",
   type: ApplicationCommandType.User,
-  enabled: true,
-  ephemeral: true,
-}
+  Context: true,
+  category: "Context",
+
+/**
+ * @param  {ContextMenuCommandInteraction} interaction
+ * @param {Client} Client
+ */
+
+  async execute (interaction, Client) {
+
+     await interaction.deferReply({ephemeral: true})
+
+     const { guild, targetId } = interaction
+
+     const target = await guild.members.get(targetId)
+
+     const Embed = new EmbedBuilder()
+        .setColor(client.Color)
+        .setAuthor({ name:`${target.user.username} 's Avatar`, iconURL: target.user.displayAvatarURL() })
+        .setImage(target.user.displayAvatarURL({ size: 512 }))
+        .setFooter({ text: "Avatar by Drago" })
+        .setTimestamp()
+
+  return interaction.editReply({ embeds: [Embed] })      
+  }
+ }
