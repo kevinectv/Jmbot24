@@ -1,5 +1,4 @@
 const { EmbedBuilder, ApplicationCommandType } = require("discord.js");
-const { EMBED_COLORS } = require("@root/config");
 
 /**
  * @type {import('@structures/BaseContext')}
@@ -10,7 +9,6 @@ module.exports = {
   type: ApplicationCommandType.User,
   enabled: true,
   ephemeral: true,
-
   async run(interaction) {
     const user = await interaction.client.users.fetch(interaction.targetId);
     const response = getAvatar(user);
