@@ -16,7 +16,7 @@ module.exports = {
 
      const { guild, targetId } = interaction
 
-     const target = await guild.members.get(targetId)
+     const target = await guild.members.cache.get(targetId)
 
      const Embed = new EmbedBuilder()
         .setColor(client.Color)
