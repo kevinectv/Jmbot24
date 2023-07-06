@@ -7,11 +7,11 @@ module.exports = {
   category: "Context",
 
 /**
- * @param  {ContextMenuCommandInteraction} interaction
+ * @param {ContextMenuCommandInteraction} interaction
  * @param {Client} Client
  */
 
-  async execute (interaction, Client) {
+  async execute(interaction, Client) {
 
      await interaction.deferReply({ephemeral: true})
 
