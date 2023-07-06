@@ -1,4 +1,4 @@
-const { EmbedBuilder, ContextMenuCommandInteraction, ApplicationCommandType } = require("discord.js");
+const { Client, ContextMenuCommandInteraction, ApplicationCommandType, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   name: "avatar",
@@ -10,8 +10,7 @@ module.exports = {
  * @param {ContextMenuCommandInteraction} interaction
  * @param {Client} Client
  */
-
-  async execute(interaction, Client) {
+ async execute(interaction, Client) {
 
      await interaction.deferReply({ephemeral: true})
 
@@ -26,6 +25,7 @@ module.exports = {
         .setFooter({ text: "Avatar by Drago" })
         .setTimestamp()
 
-  return interaction.editReply({ embeds: [Embed] })      
-  }
+      return interaction.editReply({ embeds: [Embed] })
+    
+    }
  }
