@@ -8,3 +8,15 @@ const configuracion = new configuration({
 })
 
 const openai = new OpenAIpi(configuracion)
+
+              
+module.exports = {
+    name: "chat-gpt",
+    description: "Puedes preguntar algo a chat GPT",
+    
+ 
+}
+
+
+
+
