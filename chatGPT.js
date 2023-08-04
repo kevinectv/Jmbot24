@@ -1,2 +1,2 @@
 const {SLashcommandBuilder,EmbedBuilder,ChaInputCommandInteraction} = require('discord.js')
-const {configuration, Ope} = require('openai')
+const {configuration, Openai} = require('openai') 
