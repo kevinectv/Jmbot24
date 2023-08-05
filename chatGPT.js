@@ -1,4 +1,4 @@
-const {SlashcommandBuilder, EmbedBuilder, ChaInputCommandInteraction} = require('discord.js')
+const {SlashcommandBuilder, EmbedBuilder, ApplicationCommandType, ChaInputCommandInteraction} = require('discord.js')
 const {configuration, OpenAIpi} = require('openai')
 
 const config = require("../../config/config.json")
