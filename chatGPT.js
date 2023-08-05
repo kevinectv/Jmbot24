@@ -1,13 +1,16 @@
-const {SlashcommandBuilder, EmbedBuilder, ApplicationCommandType, ChaInputCommandInteraction} = require('discord.js')
-const {configuration, OpenAIpi} = require('openai')
+const {SlashcommandBuilder, EmbedBuilder, ApplicationCommandType, ChatInputCommandInteraction} = require('discord.js')
+const {Configuration, OpenAIApi} = require('openai')
+
+const errReply = require('../../Functions/interactionErrorReply')
+const correReply = require('../../Functions/interactionReply')
 
 const config = require("../../config/config.json")
 
-const configuracion = new configuration({
+const configuracion = new Configuration({
     apiKey:config.openAiToken
 })
 
-const openai = new OpenAIpi(configuracion)
+const openai = new OpenAIApi(configuracion)
 
               
 module.exports = {
@@ -52,6 +55,3 @@ module.exports = {
     }
     
 };
-
-
-
