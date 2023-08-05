@@ -13,19 +13,16 @@ const openai = new OpenAIpi(configuracion)
 module.exports = {
     name: "chat-gpt",
     description: "Puedes preguntar algo a chat GPT",
-    Type: ApplicationCommandType
-    
- 
-}
-module.exports = {
-    name: "chat-gpt",
-    description: "Puedes preguntar algo a chat GPT",
-    StringOption: option 
-        name: "pregunta",
-        Description: "Escribe la pregunta que deses que te responda la IA",
-        .setMaxLength(300)
-        .setRequired(true)
-    ),
+    options: [
+        {
+            name: "pregunta",
+            description: "Escribe la pregunta que deses que te responda la IA",
+            type: ApplicationCommandOptionType.String,
+            required: true
+            MaxLength: 300
+        }
+    ],
+
     /**
      * 
      * @param {ChatInputCommandInteraction} interaction 
