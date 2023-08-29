@@ -38,7 +38,9 @@ Client.on('messageCreate', async (message) => {
             }
         ]
     })
-    .catch((error) => console.error('OpenAI Error:\n', error));  
+    .catch((error) => console.error('OpenAI Error:\n', error));
+    
+    message.reqly(response.choices[0].massage.content);
 });
 
 Client.login(process.env.TOKEN);
