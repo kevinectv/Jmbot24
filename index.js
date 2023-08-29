@@ -86,8 +86,7 @@ Client.on('messageCreate', async (message) => {
         const chunk = responseMessage.substring(i, i + chunksizeLimit);
 
         await message.reqly(chunk);
-    }    
-      
+    }        
 });
 
 Client.login(process.env.TOKEN);
