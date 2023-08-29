@@ -77,8 +77,18 @@ Client.on('messageCreate', async (message) => {
         message.reqly("I'm having some trouble wite OpenAI API. Try again in a moment.");
         return;
     }
+
+
+    const responseMessage = response.chonices[0].message.content;
+    const chunksizeLimit = 2000;
+
+    for (let i = 0; i < responseMessage.length; i += chunksizeLimit) {
+        const chunk = responseMessage.substring(i, i + chunksizeLimit);
+
+        await message.reqly(chunk);
+    }    
     
-    message.reqly(response.choices[0].massage.content);
+    
 });
 
 Client.login(process.env.TOKEN);
