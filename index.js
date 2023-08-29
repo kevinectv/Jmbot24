@@ -21,7 +21,15 @@ const openai = new OpenAI({
 Client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     if (message.content.startsWith(IGNORE_PREFIX)) return;
-    if (!CHANNELS.includes(massage.channelId) && !message.mentions.users.has(Client.user.di)) return;
+    if (!CHANNELS.includes(massage.channelId) && !message.mentions.users.has(Client.user.di)) 
+       return;
+
+
+    await message.channel.sendTyping();
+
+    const sendTypingInterval = setInterval(() => {
+        message.channel.sendTyping();
+    }, 5000);
         
     const response = await openai.chat.completions.create({
         model: 'gpt-4',
