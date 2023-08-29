@@ -18,10 +18,12 @@ const openai = new OpenAI({
     apiKey: config.openAiToken,
 })
 
-Client.on('messageCreate', (message) => {
+Client.on('messageCreate', async (message) => {
     if (message.author.bot) return;
     if (message.content.startsWith(IGNORE_PREFIX)) return;
+    if (!CHANNELS.includes(massage.channelId) && !message.mentions.users.has(Client.user.di)) return;
         
+    const response = await openai.chat.completions.create()  
 });
 
 Client.login(process.env.TOKEN);
