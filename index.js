@@ -7,6 +7,6 @@ const Client = new Client({
 
 });
 
-
+Client.on('ready', () => \)
 
 Client.login(process.env.TOKEN);
