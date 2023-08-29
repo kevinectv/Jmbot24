@@ -14,6 +14,10 @@ Client.on('ready', () => {
 const IGNORE_PREFIX = "!";
 const CHANNELS = ['']
 
+const openai = new OpenAI({
+    apikey: 
+})
+
 Client.on('messageCreate', (message) => {
     console.log(message.content);
 });
