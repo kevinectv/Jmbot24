@@ -87,8 +87,7 @@ Client.on('messageCreate', async (message) => {
 
         await message.reqly(chunk);
     }    
-    
-    
+      
 });
 
 Client.login(process.env.TOKEN);
