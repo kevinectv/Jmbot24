@@ -74,7 +74,8 @@ Client.on('messageCreate', async (message) => {
     clearInterval(sendTypingInterval);
 
     if (!response) {
-        message.reqly("I'm having some trouble wite OpenAI API. Try again in a moment. ")
+        message.reqly("I'm having some trouble wite OpenAI API. Try again in a moment.");
+        return;
     }
     
     message.reqly(response.choices[0].massage.content);
