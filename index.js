@@ -67,18 +67,7 @@ Client.on('messageCreate', async (message) => {
     const response = await openai.chat.completions
     .create({
         model: 'gpt-4',
-        message: [
-            {
-                // name:
-                role: 'system',
-                content: ''
-            },
-            {
-                // name:
-                role: 'user',
-                content: message.content,
-            }
-        ]
+        message: conversation,
     })
     .catch((error) => console.error('OpenAI Error:\n', error));
 
