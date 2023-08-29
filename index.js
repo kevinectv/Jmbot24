@@ -15,7 +15,7 @@ const IGNORE_PREFIX = "!";
 const CHANNELS = ['']
 
 const openai = new OpenAI({
-    apiKey: config.openAiToken
+    apiKey: config.openAiToken,
 })
 
 Client.on('messageCreate', (message) => {
