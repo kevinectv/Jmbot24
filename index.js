@@ -23,7 +23,16 @@ Client.on('messageCreate', async (message) => {
     if (message.content.startsWith(IGNORE_PREFIX)) return;
     if (!CHANNELS.includes(massage.channelId) && !message.mentions.users.has(Client.user.di)) return;
         
-    const response = await openai.chat.completions.create()  
+    const response = await openai.chat.completions.create({
+        model: 'gpt-4',
+        message: [
+            {
+                // name:
+                role: 'system',
+                content: 'chat GPT is a friendly chatbot.'
+            },
+        ]
+    })  
 });
 
 Client.login(process.env.TOKEN);
