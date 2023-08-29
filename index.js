@@ -11,4 +11,8 @@ Client.on('ready', () => {
     console.log('The bot is onlien.');
 });
 
+Client.on('messageCreate', (message) => {
+    console.log(message.content);
+});
+
 Client.login(process.env.TOKEN);
