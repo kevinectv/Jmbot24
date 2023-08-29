@@ -19,7 +19,9 @@ const openai = new OpenAI({
 })
 
 Client.on('messageCreate', (message) => {
-    console.log(message.content);
+    if (message.author.bot) return;
+    if (message.content.startsWith(IGNORE_PREFIX)) return;
+        
 });
 
 Client.login(process.env.TOKEN);
