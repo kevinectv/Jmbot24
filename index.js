@@ -11,6 +11,8 @@ Client.on('ready', () => {
     console.log('The bot is onlien.');
 });
 
+const IGNORE_PRE = "!",
+
 Client.on('messageCreate', (message) => {
     console.log(message.content);
 });
