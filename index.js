@@ -31,8 +31,14 @@ Client.on('messageCreate', async (message) => {
                 role: 'system',
                 content: 'chat GPT is a friendly chatbot.'
             },
+            {
+                // name:
+                role: 'user',
+                content: message.content,
+            }
         ]
-    })  
+    })
+    .catch((error) => console.error('OpenAI Error:\n', error));  
 });
 
 Client.login(process.env.TOKEN);
