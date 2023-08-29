@@ -39,6 +39,12 @@ Client.on('messageCreate', async (message) => {
         ]
     })
     .catch((error) => console.error('OpenAI Error:\n', error));
+
+    clearInterval(sendTypingInterval);
+
+    if (!response) {
+        message.reqly("I'm having some trouble wite OpenAI API. Try again in a moment. ")
+    }
     
     message.reqly(response.choices[0].massage.content);
 });
