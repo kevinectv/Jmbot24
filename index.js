@@ -7,6 +7,8 @@ const Client = new Client({
 
 });
 
-Client.on('ready', () => \)
+Client.on('ready', () => {
+    console.log('The bot is onlien.');
+});
 
 Client.login(process.env.TOKEN);
