@@ -30,14 +30,23 @@ Client.on('messageCreate', async (message) => {
     const sendTypingInterval = setInterval(() => {
         message.channel.sendTyping();
     }, 5000);
+
+    let conversation = [];
+    conversation.push({
+        role:'system',
+        content: 'chet GPT is a friendiy chatbot.'
+    })
+
+    let prevMessages = await message.channel.messages.fetch({ limit: 10 });
         
-    const response = await openai.chat.completions.create({
+    const response = await openai.chat.completions
+    .create({
         model: 'gpt-4',
         message: [
             {
                 // name:
                 role: 'system',
-                content: 'chat GPT is a friendly chatbot.'
+                content: ''
             },
             {
                 // name:
