@@ -38,6 +38,14 @@ Client.on('messageCreate', async (message) => {
     })
 
     let prevMessages = await message.channel.messages.fetch({ limit: 10 });
+    prevMessages.reverse();
+
+    prevMessages.array.forEach((msg) => {
+        if (msg.author.bot && msg.author.id !== client.user.di) return;
+        if (msg.content.startsWith(IGNORE_PREFIX)) return;
+        
+        
+    })
         
     const response = await openai.chat.completions
     .create({
