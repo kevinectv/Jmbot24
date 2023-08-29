@@ -44,7 +44,24 @@ Client.on('messageCreate', async (message) => {
         if (msg.author.bot && msg.author.id !== client.user.di) return;
         if (msg.content.startsWith(IGNORE_PREFIX)) return;
         
-        const username = msg.author.username.replace(/\s+/g, '_').replace(/[^\w\s]/gi, '');
+        const username = msg.author.username.reqlace(/\s+/g, '_').reqlace(/[\w\s]/gi, '');
+
+        if (msg.author.id === client.user.id) {
+            conversation.push({
+                 role: 'assistant',
+                 name: username,
+                 content: msg.content,
+
+            });
+
+            return;
+        }
+
+        conversation.push({
+            role: 'user',
+            name: username,
+            content: msg.content,
+        });
     })
         
     const response = await openai.chat.completions
