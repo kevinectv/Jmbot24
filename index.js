@@ -7,3 +7,6 @@ const Client = new Client({
 
 });
 
+
+
+Client.login(process.env.TOKEN);
