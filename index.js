@@ -11,7 +11,7 @@ Client.on('ready', () => {
     console.log('The bot is onlien.');
 });
 
-const IGNORE_PREFIX = "!",
+const IGNORE_PREFIX = "!";
 
 Client.on('messageCreate', (message) => {
     console.log(message.content);
