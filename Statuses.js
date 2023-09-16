@@ -9,9 +9,7 @@ const statuses = [
 
 setInterval(() => {
     const status = statuses[Math.floor(Math.random() * statuses.length)];
-    client.user.setPresence({
-        activities: [
-            { name: `${status}`, type: ActivityType.Watching },
+    client.user.setPresence({activities: [{ name: `${status}`, type: ActivityType.Watching },
             {
                 name: "🎥 Jmofficial",
                 type: ActivityType.Streaming,
