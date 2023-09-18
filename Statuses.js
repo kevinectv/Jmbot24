@@ -4,7 +4,6 @@ const statuses = [
     "Tadashi V2 !",
     `Ping : ${client.ws.ping}ms`,
     "https://invite.tadashibot.com/",
-    "🎥 Jmofficial",
 ];
 
 setInterval(() => {
