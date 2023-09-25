@@ -23,7 +23,6 @@ module.exports = {
 
             switch(user % 10) {
                 case 1: return user + "st";
-
                 case 2: return user + "nd";
                 case 3: return user + "rd";   
 
