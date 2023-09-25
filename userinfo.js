@@ -19,6 +19,21 @@ module.exports = {
     ],
     async runInteraction (client, interaction) {
         const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)
+
+        if(member.user.bot) return interaction.editReply({
+            embeds:
+            [
+               new EmbedBuilder().setDescription("At this moment, bots are not suppored for command.")
+            ],
+            ephemeral: true
+        });
+
+        try {
+            const fetchedMembers = await interaction.guild.members.fetch();
+
+        } catch (error) {
+
+        }
     }
 }
         
