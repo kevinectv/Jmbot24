@@ -1,5 +1,7 @@
 const { EmbedBuilder, ApplicationCommandOptionType } = require('discord.js');
 
+const { profileImage } = require('discord-arts'):
+
 module.exports = {
     name: "userinfo",
     description: "Affiche les informations d'un utilisateur",
@@ -16,7 +18,7 @@ module.exports = {
         }
     ],
     async runInteraction (client, interaction) {
-        const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)
+        const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)   
         function addSuffix(user) {
             if(user % 100 >= 11 && user % 100 <= 13)
                 return user + "th";
