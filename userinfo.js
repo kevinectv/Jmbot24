@@ -29,6 +29,43 @@ module.exports = {
             }
             return user + "th";  
         }
-        
+
+        function addBadges(badgeNames) {
+
+    if(!badgeNames.length) return ["X"];
+
+    const badgeMap = {
+
+        "ActiveDeveloper": "",
+
+        "BugHunterLevel1": "",
+
+        "BugHunterLevel2": "",
+
+        "PremiumEarlySupporter": "",
+
+        "Partner": "",
+
+        "Staff": "",
+
+        "HypeSquadOnlineHouse1": "", // bravery
+
+        "HypeSquadOnlineHouse2": "", // brilliance
+
+        "HypeSquadOnlineHouse3": "", // balance
+
+        "Hypesquad": "",
+
+        "CertifiedModerator": "",
+
+        "VerifiedDeveloper": "",
+
+    };
+
+  
+
+    return badgeNames.map(badgeName => badgeMap[badgeName] || '❔');
+
+        }
     } 
 }
