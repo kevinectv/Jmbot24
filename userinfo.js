@@ -1,4 +1,4 @@
-const { EmbedBuilder, ApplicationCommandOptionType } = require('discord.js');
+const { ChatInputCommandInteraction, EmbedBuilder, ApplicationCommandOptionType, AttachemntBuilder } = require('discord.js');
 
 const { profileImage } = require('discord-arts');
 
@@ -17,7 +17,12 @@ module.exports = {
             required: false
         }
     ],
+    /**
+     *
+     * @param {ChatInputCommandInteraction} interaction
+    */
     async runInteraction (client, interaction) {
+         await interaction.deferReply()
         const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)
 
         if(member.user.bot) return interaction.editReply({
