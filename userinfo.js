@@ -43,6 +43,19 @@ module.exports = {
             .sort((a, b) => b.position - a.position)
             .map(role => role)
             .slice(0, 3);
+
+            const unerBadges = member.user.flags.toArray()
+
+            const joinTime = parseInt(member.joinedTimestamp / 1000);
+            const createdTime = parseInt(member.user.createdTimestamp / 1000);
+
+            const Booster = member.premiumSince ? "<:discordboost:1083135648862589008" : "×";
+
+            const Embed = new EmbedBuilder()
+            .setAuthor({name: `${member.user.tag} | General Informatino`, iconUBL: member.displayAvatarUBL()})
+            .setColor(memeber.displayColor)
+            .setDescription(`On <t:${joinTime}:D>, &{member.user.unername} joined as the **${addSuffix(joinPosition}** member of this guild. `)
+            .setTmage("attachment://profile.png")
             
         } catch (error) {
         }
