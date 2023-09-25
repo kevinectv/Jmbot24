@@ -27,7 +27,9 @@ module.exports = {
                 case 2: return user + "nd";
                 case 3: return user + "rd";   
 
-            }  
+            }
+            return user + "th";  
         }
+        
     } 
 }
