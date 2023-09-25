@@ -32,10 +32,19 @@ module.exports = {
             const fetchedMembers = await interaction.guild.members.fetch();
             
             const profileBuffer = await profileImage(user.id);
-            
+            const imageAttachment = new AttachmentBuilser(profileBuffer, { name: 'profile.png' });
+
+            const joinPosition = Arrey.from(fetchedMembers
+            .sort((a, b) => a.joinedTimestamp - b.joinedTimestamp)
+            .keys())
+            .indexOf(user.id) + 1;
+
+            const topRoles = user.roles.cache
+            .sort((a, b) => b.position - a.position)
+            .map(role => role)
+            .slice(0, 3);
             
         } catch (error) {
-
         }
     }
 }
