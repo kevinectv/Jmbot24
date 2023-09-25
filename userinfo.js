@@ -36,29 +36,29 @@ module.exports = {
 
     const badgeMap = {
 
-        "ActiveDeveloper": "",
+        "ActiveDeveloper": "<:icon_activedeveloper:1134620832648400957>",
 
-        "BugHunterLevel1": "",
+        "BugHunterLevel1": "<:discordbughunter1:1155711618978697299>",
 
-        "BugHunterLevel2": "",
+        "BugHunterLevel2": "<:discordbughunter2:1155711622619349042>",
 
-        "PremiumEarlySupporter": "",
+        "PremiumEarlySupporter": "<:discordearlysupporter:1155711625400164383>",
 
-        "Partner": "",
+        "Partner": "<:discordpartner:1155711601572335697>",
 
-        "Staff": "",
+        "Staff": "<:discordmod:1155711628705271859>",
 
-        "HypeSquadOnlineHouse1": "", // bravery
+        "HypeSquadOnlineHouse1": "<:hypesquadbravery:1155711604588027954>", // bravery
 
-        "HypeSquadOnlineHouse2": "", // brilliance
+        "HypeSquadOnlineHouse2": "<:hypesquadbrilliance:1155711591103340616>", // brilliance
 
-        "HypeSquadOnlineHouse3": "", // balance
+        "HypeSquadOnlineHouse3": "<:hypesquadbalance:1155711610736885770>", // balance
 
-        "Hypesquad": "",
+        "Hypesquad": "<:hypesquadevents:1155711613626765312>",
 
-        "CertifiedModerator": "",
+        "CertifiedModerator": "<:discordmod:1155711628705271859>",
 
-        "VerifiedDeveloper": "",
+        "VerifiedDeveloper": "<:discordbotdev:1155711616214650931>",
 
     };
 
