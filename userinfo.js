@@ -21,11 +21,11 @@ module.exports = {
             if(user % 100 >= 11 && user % 100 <= 13)
                 return user + "th";
 
-            switch(user % 10)  {
+            switch(user % 10) {
                 case 1: return user + "st";
 
-                case 2:
-                case 3:    
+                case 2: return user + "nd";
+                case 3: return user + "rd";   
 
             }  
         }
