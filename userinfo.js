@@ -18,7 +18,10 @@ module.exports = {
         }
     ],
     async runInteraction (client, interaction) {
-        const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)   
+        const member = await interaction.guild.members.fetch(interaction.options.getMember("user") || interaction.user.id)
+    }
+}
+        
         function addSuffix(user) {
             if(user % 100 >= 11 && user % 100 <= 13)
                 return user + "th";
@@ -69,5 +72,5 @@ module.exports = {
     return badgeNames.map(badgeName => badgeMap[badgeName] || '❔');
 
         }
-    } 
-}
+    
+
