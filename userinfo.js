@@ -1,6 +1,6 @@
 const { EmbedBuilder, ApplicationCommandOptionType } = require('discord.js');
 
-const { profileImage } = require('discord-arts'):
+const { profileImage } = require('discord-arts');
 
 module.exports = {
     name: "userinfo",
