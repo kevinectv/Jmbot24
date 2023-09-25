@@ -56,7 +56,18 @@ module.exports = {
             .setColor(memeber.displayColor)
             .setDescription(`On <t:${joinTime}:D>, &{member.user.unername} joined as the **${addSuffix(joinPosition}** member of this guild. `)
             .setTmage("attachment://profile.png")
+            .addFields([
+                {name: "Badges", value: `${addBadges(userBadges).join("")}`, inline: true};
+                {name: "Booster", value: `${Booster}`, inline: true},
+                {name: "Top Roles", value: `${topRoles.join("").replace(`<@${interaction.guildId}>`)}`, inline: false},
+                {name: "Created", value: `<t:${createdTime}:R>`, inline: true};
+                {name: "Joined", value: `<t:${joinTime}:R>`, inline: true};
+                {name: "Identifier", value: `${user.id}`, inline: false};
+                {name: "Avatar", value: `[Link](${member.diaplayAvatarURL()})`, inline: true};
+                {name: "Identifier", value: `[Link](${(await member.user.fetch()).bannerURL()})`, inline: true};
+            ]);
             
+            interaction.editReply({embeds: [Embed], files: [imageAttachment]}); 
         } catch (error) {
         }
     }
