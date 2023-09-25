@@ -69,9 +69,11 @@ module.exports = {
             
             interaction.editReply({embeds: [Embed], files: [imageAttachment]}); 
         } catch (error) {
+            interaction.editReply({content: "An error occured: Contact The Developer"});
+            throw error;
+           }
         }
     }
-}
         
         function addSuffix(user) {
             if(user % 100 >= 11 && user % 100 <= 13)
